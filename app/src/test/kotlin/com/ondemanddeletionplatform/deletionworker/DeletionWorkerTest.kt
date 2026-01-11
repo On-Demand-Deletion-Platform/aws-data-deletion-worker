@@ -6,7 +6,12 @@ import org.junit.jupiter.api.Test
 class DeletionWorkerTest {
   @Test
   fun deletionWorkerHasAGreeting() {
-    val classUnderTest = DeletionWorker()
-    assertNotNull(classUnderTest.greeting, "deletion worker should have a greeting")
+    val worker = DeletionWorker()
+    assertNotNull(worker.greeting, "deletion worker should have a greeting")
+  }
+
+  @Test
+  fun mainFunctionSucceeds() {
+    main()
   }
 }

@@ -19,9 +19,21 @@ plugins {
 repositories {
     // Use Maven Central for resolving dependencies.
     mavenCentral()
+
+    // GitHub Packages repository for aws-data-deletion-sdk
+    maven {
+        url = uri("https://maven.pkg.github.com/On-Demand-Deletion-Platform/aws-data-deletion-sdk")
+        credentials {
+            username = project.findProperty("gpr.user") as String? ?: System.getenv("GITHUB_USERNAME")
+            password = project.findProperty("gpr.key") as String? ?: System.getenv("GITHUB_TOKEN")
+        }
+    }
 }
 
 dependencies {
+    // AWS Data Deletion SDK
+    implementation("com.ondemanddeletionplatform:aws-data-deletion-sdk:0.0.2")
+    
     // AWS SDK for Kotlin
     implementation("aws.sdk.kotlin:dynamodb:1.5.113")
 

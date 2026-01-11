@@ -1,4 +1,4 @@
-package com.ondemanddeletionplatform.deletionworker.domain.connectors.dynamodb
+package com.ondemanddeletionplatform.deletionworker.connectors.dynamodb
 
 import aws.sdk.kotlin.services.dynamodb.DynamoDbClient
 import aws.sdk.kotlin.services.dynamodb.model.AttributeValue

@@ -1,6 +1,14 @@
 name: Local tests
 description: Run unit tests and local integ tests
 
+inputs:
+  github-token:
+    description: 'GitHub token for authentication'
+    required: true
+  github-username:
+    description: 'GitHub username for authentication'
+    required: true
+
 runs:
   using: 'composite'
   steps:
@@ -19,7 +27,13 @@ runs:
       run: gradle wrapper build
       shell: bash
       working-directory: aws-data-deletion-worker
+      env:
+        GITHUB_TOKEN: ${{ inputs.github-token }}
+        GITHUB_USERNAME: ${{ inputs.github-username }}
     - name: Run gradle localIntegTest
       run: gradle wrapper localIntegTest
       shell: bash
       working-directory: aws-data-deletion-worker
+      env:
+        GITHUB_TOKEN: ${{ inputs.github-token }}
+        GITHUB_USERNAME: ${{ inputs.github-username }}

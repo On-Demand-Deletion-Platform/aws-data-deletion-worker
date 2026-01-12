@@ -18,8 +18,12 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
+      packages: read
     steps:
       - name: Check out package
         uses: actions/checkout@v4
       - name: Run local tests
         uses: ./.github/actions/localIntegTest
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          github-username: ${{ github.actor }}

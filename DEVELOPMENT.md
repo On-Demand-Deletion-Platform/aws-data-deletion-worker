@@ -38,6 +38,12 @@ Helpful localIntegTest options:
 * `--info` - print info logs to console
 * `--rerun-tasks` - force rerun even if prior integ test run, use if auto-completes with message `Configuration cache entry reused.`
 
+Eg.
+
+```sh
+./gradlew localIntegTest -DrunLocalIntegTests=true --info --rerun-tasks
+```
+
 Integ test code snippets to help with debugging:
 * Can use `localstack.printLogs()` to print container logs for debugging.
 * If need to debug LocalStack startup issues, update the `LocalStackContainer` definition to include:

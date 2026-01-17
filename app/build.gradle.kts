@@ -32,7 +32,7 @@ repositories {
 
 dependencies {
     // AWS Data Deletion SDK
-    implementation("com.ondemanddeletionplatform:aws-data-deletion-sdk:0.0.2")
+    implementation("com.ondemanddeletionplatform:aws-data-deletion-sdk:0.0.3")
 
     // AWS SDK for Kotlin
     implementation("aws.sdk.kotlin:dynamodb:1.5.113")

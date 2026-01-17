@@ -1,13 +1,13 @@
-package com.ondemanddeletionplatform.deletionworker.connectors.dynamodb
+package com.ondemanddeletionplatform.deletionworker.localinteg.connectors.dynamodb
 
 import aws.sdk.kotlin.services.dynamodb.DynamoDbClient
 import aws.sdk.kotlin.services.dynamodb.model.AttributeValue
 import aws.sdk.kotlin.services.dynamodb.model.GetItemRequest
 import aws.sdk.kotlin.services.dynamodb.model.GetItemResponse
 import aws.sdk.kotlin.services.dynamodb.model.PutItemRequest
-import com.ondemanddeletionplatform.deletionworker.testutil.dynamodb.DynamoDbIntegTestConstants
-import com.ondemanddeletionplatform.deletionworker.testutil.dynamodb.DynamoDbLocalStack
-import com.ondemanddeletionplatform.deletionworker.testutil.dynamodb.DynamoDbRepositoryUtils
+import com.ondemanddeletionplatform.deletionworker.localinteg.testutil.dynamodb.DynamoDbIntegTestConstants
+import com.ondemanddeletionplatform.deletionworker.localinteg.testutil.dynamodb.DynamoDbLocalStack
+import com.ondemanddeletionplatform.deletionworker.localinteg.testutil.dynamodb.DynamoDbRepositoryUtils
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Assertions.assertNotNull
 import org.junit.jupiter.api.Assertions.assertNull

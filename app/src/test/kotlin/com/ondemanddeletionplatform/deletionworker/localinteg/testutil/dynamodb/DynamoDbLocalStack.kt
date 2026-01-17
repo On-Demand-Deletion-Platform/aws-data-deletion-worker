@@ -1,4 +1,4 @@
-package com.ondemanddeletionplatform.deletionworker.testutil.dynamodb
+package com.ondemanddeletionplatform.deletionworker.localinteg.testutil.dynamodb
 
 import aws.sdk.kotlin.runtime.auth.credentials.StaticCredentialsProvider
 import aws.sdk.kotlin.services.dynamodb.DynamoDbClient

@@ -33,7 +33,7 @@ repositories {
 dependencies {
     // AWS Data Deletion SDK
     implementation("com.ondemanddeletionplatform:aws-data-deletion-sdk:0.0.2")
-    
+
     // AWS SDK for Kotlin
     implementation("aws.sdk.kotlin:dynamodb:1.5.113")
 
@@ -77,7 +77,7 @@ detekt {
     toolVersion = "1.23.8"
 
     // Directory where detekt will search for source files.
-    source.setFrom("src/main/kotlin", "src/test/kotlin", "src/localIntegTest/kotlin")
+    source.setFrom("src/main/kotlin", "src/test/kotlin")
 
     // Specify custom detekt config file for overriding lint rules.
     config.setFrom("$projectDir/config/detekt.yml")
@@ -136,10 +136,9 @@ tasks.withType<io.gitlab.arturbosch.detekt.DetektCreateBaselineTask>().configure
 
 // Define source set for local integ tests
 val localIntegTestSourceSet = sourceSets.create("localIntegTest") {
-    kotlin.srcDir("src/localIntegTest/kotlin")
-    resources.srcDir("src/localIntegTest/resources")
-    compileClasspath += sourceSets.main.get().output
-    runtimeClasspath += sourceSets.main.get().output
+    kotlin.srcDir("src/test/kotlin/com/ondemanddeletionplatform/deletionworker/localinteg")
+    compileClasspath += sourceSets.main.get().output + configurations.testCompileClasspath.get()
+    runtimeClasspath += sourceSets.main.get().output + configurations.testRuntimeClasspath.get()
 }
 
 // Reuse test dependencies for local integ tests

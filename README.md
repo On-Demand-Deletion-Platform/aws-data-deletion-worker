@@ -4,6 +4,9 @@
 
 Service code for processing a deletion request and deleting a customer's data from onboarded AWS-hosted data stores.
 
+## Project status
+This repository is archived and no longer under active development.
+
 ## Technologies
 
 * [AWS SDK for Kotlin](https://docs.aws.amazon.com/sdk-for-kotlin/api/latest/) is used for AWS integrations for deleting data from AWS data stores such as DynamoDB.
